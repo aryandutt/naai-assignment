@@ -1,14 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Select, SelectItem } from "@nextui-org/react";
 import { timeSlots } from "@/util";
 
 const Slot = () => {
-  const [selectedValue, setSelectedValue] = useState<number>(0);
-
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedValue(Number(event.target.value));
-  };
   return (
     <div className="p-2 flex gap-3">
       <div className="flex-1 flex flex-col gap-2">
@@ -18,13 +13,11 @@ const Slot = () => {
           className="w-full my-1"
           color="primary"
           variant="bordered"
-          onChange={handleChange}
-          placeholder={selectedValue.toString()}
-          value={selectedValue}
+          placeholder={"0"}
         >
           {Array.from({ length: 10 }, (_, i) => (
-            <SelectItem key={i} value={i}>
-              {i}
+            <SelectItem key={i} value={i.toString()}>
+              {i.toString()}
             </SelectItem>
           ))}
         </Select>
