@@ -9,7 +9,7 @@ const BusinessHoursWrapper = () => {
   return (
     <>
       <Header />
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-4">
         <h1 className="font-bold text-xl mx-3 my-4">Business hours details</h1>
         <SelectWorkingDays />
         <AvailabilityInfo />
